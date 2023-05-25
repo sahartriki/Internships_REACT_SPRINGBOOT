@@ -1,0 +1,299 @@
+@import "./Styles/variables";
+@import "./Styles/constant";
+
+:root {
+  --font-family: "Spartan",sans-serif;
+  --gradient-text: linear-gradient(89.97deg,#ae67fa 1.84%,#f49867 102.67%);
+  --gradient-bar: linear-gradient(103.22deg,#ae67fa -13.86%,#f49867 99.55%);
+  --gradient-text__melkart: linear-gradient(89.97deg,#2f5b96 1.84%,#385985 102.67%);
+  --gradient-bar__melkart: linear-gradient(103.22deg,#2f5b96 -13.86%,#385985 99.55%);
+  --color-bg: #040c18;
+  --color-footer: #031b34;
+  --color-blog: #042c54;
+  --color-text: #5b7299;
+  --color-subtext: #ff8a71;
+  --color-main: #2f5b96;
+  --color-secondary: #757677;
+  --color-p_one: #385985;
+  --color-p_two: #5b7299;
+  --color-p_three: #9ca4c1;
+  --color-s_one: #5c5c5c;
+  --color-s_two: #8f8f8f;
+  --color-s_three: #c6c2c1;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Product Sans", sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.app__sttop {
+  background: $elementary-color;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 50px;
+  color: $neutral;
+  opacity: 0;
+  transition: $trans;
+  pointer-events: none;
+
+  &.active {
+    opacity: 1;
+    pointer-events: visible;
+  }
+
+  a {
+    height: 100%;
+    width: 100%;
+    @include flexCenter;
+  }
+}
+.white-text {
+  color: #ffffff;
+}
+.white-header {
+  color: white;
+}
+.internh1{
+  color: white;
+}
+.internh2{
+ 
+  color: rgb(245, 244, 246);
+}
+
+.listpartenrship {
+  display: flex;
+  flex-wrap: wrap; /* to wrap the items onto the next line if necessary */
+}
+
+.titreclub {
+  color: #fff;
+  font-family: var(--font-family);
+  font-size: 18px;
+ 
+  
+}
+
+.titreclub h1{
+  
+  margin-bottom: 15%;
+  position: relative; /* set position to relative to position the underline */
+  display: inline-block; /* make the underline only as wide as the text */
+  
+  /* add styles for the underline */
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* position the underline below the text */
+    width: 100%;
+    height: 2px;
+    background-color: #54cefe;
+    transition: transform 0.3s ease; /* add transition effect */
+    transform: scaleX(0); /* start with the underline hidden */
+    transform-origin: left; /* set the origin of the transform to the left */
+  }
+  
+  /* add hover styles to show the underline */
+  &:hover::after {
+    transform: scaleX(1); /* show the underline */
+  }
+  
+
+}
+
+@media screen and (max-width: 550px){
+  .titreclub h1 {
+    font-size: 15px;
+    line-height: 13px;
+   
+    }
+
+    .control{
+      width: 70%;
+    }
+
+    .titreclub span{
+      font-size: 13px;
+      
+    }
+  
+    
+  
+  }
+
+  .btn {
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 24px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-out;
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+
+  .homenav{
+    background-color: #031b34;
+  }
+
+ 
+
+  .Admin__home
+  {
+    @include flexDirection;
+    background: $primary-color;
+    padding: 9rem $md-gap;
+   
+    gap: 3rem;
+
+    .Admin__text {
+      text-align: left ;
+    
+    
+      
+      
+       
+      h1 {
+        @include textGradient;
+        font-size: 8rem;
+
+      }
+    }
+  
+  }
+
+
+
+  .card-list {
+    padding-bottom: 10%;
+    padding-top: 5%;
+    background-color: $primary-color; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition: background-color 0.3s ease , transform 0.3s ease;
+    &:hover {
+      background-color: #dbe9f3;
+      transform: translateY(-13px);
+      h2{
+        color:rgb(0, 0, 0) ;
+      }
+     }
+  }
+  
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .card {
+    border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease , transform 0.3s ease; 
+  box-shadow: 2px 2px 4px rgba(54, 214, 246, 0.942);
+  &:hover {
+    background-color: $primary-color;
+    transform: translateY(-13px);
+    h2{
+      color:white ;
+    }
+    
+   }
+  
+      h2{
+        
+        position: relative; /* set position to relative to position the underline */
+        display: inline-block; /* make the underline only as wide as the text */
+         color:rgb(19, 11, 11) ;
+        /* add styles for the underline */
+        &::after {
+          
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -2px; /* position the underline below the text */
+          width: 100%;
+          height: 2px;
+          background-color: #74cff3;
+          transition: transform 0.3s ease; /* add transition effect */
+          transform: scaleX(0); /* start with the underline hidden */
+          transform-origin: left; /* set the origin of the transform to the left */
+        }
+        
+        /* add hover styles to show the underline */
+        &:hover::after {
+         
+          transform: scaleX(1); /* show the underline */
+        }
+        
+         }
+
+         
+
+  }
+
+  .separator {
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    
+  }
+
+  footer {
+    background-color:$primary-color;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+
+  .btnAd{
+    background-color: rgb(99, 180, 246);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    width: 25%;
+    height: 45px;
+    transition: background-color 0.3s ease , transform 0.3s ease; 
+  box-shadow: 0px 1px 2px rgba(255, 255, 255, 0.942);
+  &:hover {
+    background-color: $primary-color;
+    transform: translateY(-13px);
+    
+
+
+  }
+ 
+}
+
+
+
+
